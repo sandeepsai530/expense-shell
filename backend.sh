@@ -45,7 +45,7 @@ dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing NodeJS"
 
 useradd expense &>>$LOG_FILE_NAME
-VALIDATE$? "Adding expense user"
+VALIDATE $? "Adding expense user"
 
 mkdir /app &>>$LOG_FILE_NAME
 VALIDATE $? "Creating app directory"
