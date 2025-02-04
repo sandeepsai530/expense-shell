@@ -57,5 +57,7 @@ VALIDATE $? "moving to HTML directory"
 unzip /tmp/frontend.zip
 VALIDATE $? "unzip frontend code"
 
+cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf
+
 systemctl restart nginx
 VALIDATE $? "restarting nginx"
