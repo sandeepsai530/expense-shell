@@ -58,7 +58,7 @@ echo "script started executing at:$TIMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ -n $FILES ]
+if [[ -n $FILES ]]
 then
     echo "Files are: $FILES"
     ZIP_FILE="$DEST_DIR/source-$TIMESTAMP.zip"
