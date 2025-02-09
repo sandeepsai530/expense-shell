@@ -56,5 +56,6 @@ fi
 
 echo "script started executing at:$TIMESTAMP" &>>$LOG_FILE_NAME
 
-VALIDATE
-CHECK_ROOT
+FILES=$(find $SOURCE_DIR -name "*.log" +mtime $DAYS)
+
+echo "Files are: $FILES"
