@@ -62,7 +62,7 @@ if [[ -n $FILES ]]
 then
     echo "Files are: $FILES"
     ZIP_FILE="$DEST_DIR/source-$TIMESTAMP.zip"
-    #find $SOURCE_DIR -name "*.log" -mtime +$DAYS|zip -@ "$ZIP_FILE"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS|zip -@ "$ZIP_FILE"
 else
     echo "No files older than $DAYS"
     echo "ZIP can't be performed"
