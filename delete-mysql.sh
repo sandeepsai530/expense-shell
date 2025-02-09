@@ -68,6 +68,7 @@ then
         echo -e "Successfully created zip file for files older than $DAYS"
     else
         echo -e "$R Error: $N failed to create ZIP file"
+    fi
 else
     echo "No files older than $DAYS"
     echo "ZIP can't be performed"
