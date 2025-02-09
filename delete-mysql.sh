@@ -6,8 +6,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIR=/home/ec2-user/source
-DEST_DIR=/home/ec2-user/destination
+SOURCE_DIR=$1
+DEST_DIR=$2
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
@@ -34,12 +34,24 @@ CHECK_ROOT(){
 
 USAGE(){
     echo -e "$R USAGE: $N sh delete-mysql.sh <SOURCE-DIR> <DESTINATION-DIR> <DAYS(Optional)>"
+    exit 1
 }
 
 if [ $# -lt 2 ]
 then
     USAGE
-    #exit 1
+fi
+
+if [ ! -d SOURCE_DIR ]
+then
+    echo -e "$R Source folder doesn't exist. please validate"
+    exit 1
+fi
+
+if [ ! -d DEST_DIR ]
+then
+    echo -e "$R Destination folder doesn't exist. please validate"
+    exit 1
 fi
 
 echo "script started executing at:$TIMESTAMP" &>>$LOG_FILE_NAME
