@@ -42,13 +42,13 @@ then
     USAGE
 fi
 
-if [ ! -d SOURCE_DIR ]
+if [ -d SOURCE_DIR ]
 then
     echo -e "$R Source folder doesn't exist. please validate"
     exit 1
 fi
 
-if [ ! -d DEST_DIR ]
+if [ -d DEST_DIR ]
 then
     echo -e "$R Destination folder doesn't exist. please validate"
     exit 1
