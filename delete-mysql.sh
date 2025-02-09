@@ -22,7 +22,7 @@ VALIDATE(){
 }
 
 CHECK_ROOT(){
-    if [ USERID -ne 0 ];
+    if [[ USERID -ne 0 ]]
     then
         echo -e "$R ERROR: You must have a sudo access to execute this script"
         exit 1
