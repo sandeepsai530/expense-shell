@@ -39,7 +39,7 @@ USAGE(){
 if [ $# -lt 2 ]
 then
     USAGE
-    exit 1
+    #exit 1
 fi
 
 echo "script started executing at:$TIMESTAMP" &>>$LOG_FILE_NAME
