@@ -6,6 +6,9 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+SOURCE_DIR=/home/ec2-user/source
+DEST_DIR=/home/ec2-user/destination
+
 LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-m-%d-%H-%M-%S)
@@ -28,6 +31,16 @@ CHECK_ROOT(){
         exit 1
     fi
 }
+
+USAGE(){
+    echo -e "$R USAGE: $N sh delete-mysql.sh <SOURCE-DIR> <DESTINATION-DIR> <DAYS(Optional)>"
+}
+
+if [ $# -lt 2 ]
+then
+    USAGE
+    exit 1
+fi
 
 echo "script started executing at:$TIMESTAMP" &>>$LOG_FILE_NAME
 
