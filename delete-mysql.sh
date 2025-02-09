@@ -42,7 +42,7 @@ then
     USAGE
 fi
 
-if [ ! -d SOURCE_DIR ]
+if [ -d SOURCE_DIR ]
 then
     echo -e "$R Source folder doesn't exist. please validate"
     exit 1
